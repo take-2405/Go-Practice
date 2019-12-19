@@ -2,7 +2,7 @@ package server
 
 import (
     "github.com/gin-gonic/gin"
-    "./../controller"
+    "github.com/git/Go-Practice/sampleAPI/controller"
 )
 
 // Init is initialize server

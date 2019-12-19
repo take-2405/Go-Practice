@@ -1,9 +1,10 @@
 package db
 
 import (
-	"model"
+	"github.com/git/Go-Practice/sampleAPI/model"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
+	"log"
 )
 
 var (
@@ -13,11 +14,13 @@ var (
 
 //Init DBの初期化
 func Init() {
-	db, err := gorm.Open("postgres", "host=0.0.0.0 port=5432 user=gorm dbname=gorm password=gorm sslemode=password")
+	
+	db, err := gorm.Open("postgres", "host=0.0.0.0 port=5432 user=gorm dbname=gorm password=gorm sslemode=gorm password=gorm")
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
-	autoMigration()
+	db.AutoMigrate(&model.User{})
+	
 }
 
 //GetDB データベースを返す
@@ -31,8 +34,4 @@ func Close() {
 		panic(err)
 	}
 
-}
-
-func autoMigration() {
-	db.AutoMigrate(&model.User{})
 }

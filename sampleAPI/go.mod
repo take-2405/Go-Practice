@@ -1,4 +1,4 @@
-module github.com/Go-Pracrice/sampleAPI
+module github.com/git/Go-Practice/sampleAPI
 
 go 1.13
 

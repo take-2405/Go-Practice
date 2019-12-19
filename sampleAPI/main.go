@@ -1,18 +1,17 @@
 package main
 
 import (
-	"./db"
-	"./server"
-	"github.com/gin-gonic/gin"
+	"github.com/git/Go-Practice/sampleAPI/db"
+	"github.com/git/Go-Practice/sampleAPI/server"
 )
 
 func main() {
-	router := gin.Default()
-	router.GET("/", func(c *gin.Context) {
-		c.String(200, "HelloWorld")
-	})
+	// router := gin.Default()
+	// router.GET("/", func(c *gin.Context) {
+	// 	c.String(200, "HelloWorld")
+	// })
 	db.Init()
-	router.Run()
+	//router.Run()
 	db.Close()
 	server.Init()
 }
