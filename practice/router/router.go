@@ -5,10 +5,14 @@ import(
 	"../controllar"
 )
 
+var(
+	Router *gin.Engine
+)
+
 func Init(){
 	Router := gin.Default()
 	//事前にテンプテートの実行HTMLを指定
-	Router.LoadHTMLGlob("../views/*.html")
+	Router.LoadHTMLGlob("template/base.html")
 	Router.GET("/", controllar.Home)
 	Router.GET("/Send", controllar.Send)
 }
