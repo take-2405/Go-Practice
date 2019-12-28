@@ -1,4 +1,4 @@
 # Go-Practice
-ICT演習以外のGoのプログラム
+ICT演習以外の Golang Promgram
 #### practice
 自分で低レベルなフロントを書いてそこからのJSONの取得とDBとのやり取り
