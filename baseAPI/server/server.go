@@ -9,8 +9,8 @@ var (
 	Router *gin.Engine
 )
 
-func Init() {
-	Router := gin.Default
+func init() {
+	Router = gin.Default()
 	Router.GET("/get", controller.Get)
 	Router.POST("/post", controller.Post)
 
